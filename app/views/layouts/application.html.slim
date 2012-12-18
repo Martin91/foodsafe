@@ -8,4 +8,5 @@ html
     =javascript_include_tag "bootstrap"
     =csrf_meta_tags
   body
-    =yield
+  =render "layouts/header"
+  =yield
