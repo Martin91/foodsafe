@@ -12,6 +12,7 @@ FoodSafeNet::Application.routes.draw do
   match 'gov_infos' => 'gov_info#index'
   match 'public_infos' => 'public_infos#index'
   match 'reports' => 'reports#index'
+  match 'servers' => 'servers#index'
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
