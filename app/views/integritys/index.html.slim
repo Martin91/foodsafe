@@ -1,2 +1,42 @@
-h1 Integritys#index
-p Find me in app/views/integritys/index.html.slim
+div.container
+  ul.breadcrumb
+    li
+      a href=root_path 首页
+      span.divider \
+    li.active 诚信系统
+
+  div.row
+    div.span3
+      ul.nav.nav-tabs.nav-stacked
+        li
+          a href="#" 质量公告
+        li
+          a href="#" 查处公告
+        li
+          a href="#" 审批公告
+
+    div.span9
+      ul.nav.nav-tabs
+        li.active
+          a href="#" 
+            strong 工作动态
+      div#file_list
+        table cell-padding="0" cell-spacing="0" width="80%"
+          -15.times do
+            tr
+              td 
+                a href="#" -这里是一个新公告
+              td align="right" 2011-04-27
+        div.pagination align="center"
+          ul
+            li.disable
+              span <<
+            li.active
+              span 1
+            li
+              a href="#" 2
+            li
+              a href="#" 3
+            li
+              a href="#" >>
+
