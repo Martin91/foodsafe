@@ -1,2 +1,94 @@
-h1 Reports#index
-p Find me in app/views/reports/index.html.slim
+div.container
+  ul.breadcrumb
+    li
+      a href=root_path 首页
+      span.divider \
+    li.active 投诉举报
+
+  div.row
+    div.span3
+      ul.nav.nav-tabs.nav-stacked
+        li
+          a href="#" 申请信访
+        li
+          a href="#" 查询信访结果
+
+    div.span9
+      ul.nav.nav-tabs
+        li.active
+          a href="#" 
+            strong 申请信访
+
+      div#report_form
+        form
+          fieldset
+            legend 信访人信息
+            label 姓名:
+            input type="text" placeholder="请输入您的姓名"
+            label 电子邮箱:
+            input#prependedInput type="text" placeholder="请输入您的电子邮箱"
+            label 联系电话:
+            input type="text" placeholder="请输入您的联系电话"
+
+            legend 信件内容
+            label 标题:
+            input type="text"
+            label 内容:
+            textarea.span6 rows="6" 
+            br
+            input.btn type="submit" value="提交"
+              |
+                &nbsp
+            input.btn type="reset"  value="重填"
+      br
+      div#reports_info
+        div
+          form
+            fieldset
+              legend 信访记录
+              div.input-prepend
+                div.btn-group
+                  a.btn.dropdown-toggle data-toggle="dropdown" href="#" 按登记号查询<span class="caret"></span>
+                  ul.dropdown-menu
+                    li
+                      a tabindex="-1" href="#" 按登记号查询
+                    li
+                      a tabindex="-1" href="#" 按提交日期查询
+                    li 按提交日期查询
+                input.span3 id="prependedDropdownButton" type="text"
+                input.btn.btn-primary type="submit" value="查询"
+        div
+          table.table.table-striped
+            tr.info
+              td width="30%"
+                strong 登记号
+              td width="30%"
+                strong 提交日期
+              td width="20%"
+                strong 状态
+              td width="20%"
+                strong 查看
+            -5.times do
+              tr
+                td 201212190048
+                td 2012-12-19
+                td 未受理
+                td
+                  a href="#" 查看
+          div#pagination align="center"
+            div.pagination 
+              ul
+                -page_number=0
+                -5.times do
+                  -page_number += 1
+                  li
+                    a href="#" =page_number
+            div
+              span 共
+              strong 999
+              |
+                条记录，分xx页,转到&nbsp
+              input.span1 type="text"
+                |
+                  &nbsp页
+  hr
