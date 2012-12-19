@@ -38,36 +38,4 @@ div.container
                 |
                   *可以填写一个或者多个搜索项关键字，然后按“搜索”按钮。
               input.btn type="submit" value="搜索"
-      
-      div#search_forms
-        div.search_form
-          form
-            fieldset
-              legend 批准证号查询
-              label 产品名称
-              input type="text"
-              label 批准文号
-              input type="text"
-              div.alert
-                |
-                  *可以填写一个或者多个搜索项关键字，然后按“搜索”按钮。
-              input.btn type="submit" value="搜索"
-      
-      div#search_forms
-        div.search_form
-          form
-            fieldset
-              legend 广告文号查询
-              label 企业名称
-              input type="text"
-              label 产品名称
-              input type="text"
-              label 批准文号
-              input type="text"
-              label 广告批准文号
-              input type="text"
-              div.alert
-                |
-                  *可以填写一个或者多个搜索项关键字，然后按“搜索”按钮。
-              input.btn type="submit" value="搜索"
           
