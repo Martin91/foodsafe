@@ -9,9 +9,9 @@ div.container
     div.span3
       ul.nav.nav-tabs.nav-stacked
         li
-          a href="#" 申请信访
+          a href="#newreport" 信访
         li
-          a href="#" 查询信访结果
+          a href="#reporthistory" 查询信访结果
 
     div.span9
       ul.nav.nav-tabs
@@ -22,6 +22,7 @@ div.container
       div#report_form
         form
           fieldset
+            a name="newreport"
             legend 信访人信息
             label 姓名:
             input type="text" placeholder="请输入您的姓名"
@@ -45,6 +46,7 @@ div.container
         div
           form
             fieldset
+              a name="reporthistory"
               legend 信访记录
               div.input-prepend
                 div.btn-group
