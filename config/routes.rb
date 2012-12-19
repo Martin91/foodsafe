@@ -1,6 +1,4 @@
 FoodSafeNet::Application.routes.draw do
-  get "gov_info/index"
-
   root :to => "home_page#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -11,6 +9,7 @@ FoodSafeNet::Application.routes.draw do
 
   match 'organ' => 'organ#show' 
   match 'laws' => 'laws#index'
+  match 'gov_info' => 'gov_info#index'
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

@@ -1,2 +1,107 @@
-h1 GovInfo#index
-p Find me in app/views/gov_info/index.html.slim
+div.container
+  ul.breadcrumb
+    li
+      a href=root_path 首页
+      span.divider \
+    li.active 政务信息
+
+  div.row
+    div.span3
+      ul.nav.nav-tabs.nav-stacked
+        li
+          a href="#" 工作计划
+        li
+          a href="#" 工作内容
+        li
+          a href="#" 工作成果
+        li 
+          a href="#" 工作动态
+        li
+          a href="#" 各省动态
+
+    div.span9
+      ul.nav.nav-tabs
+        li.active
+          a href="#" 
+            strong 工作动态
+      div.row#search_form
+        form.navbar-form.pull-right
+          |
+            关键字
+          input.span2 type="text"
+          |
+            时间
+          input.span2 type="text"
+          input.btn type="submit" value="搜索"
+      br
+      div#file_list
+        table cell-padding="0" cell-spacing="0" width="80%"
+          tr
+            td 
+              a href="#" -这是最新的新闻动态
+            td align="right" 2011-04-27
+          tr
+            td
+              a href="#" -这又是一条新闻
+            td align="right" 2010-04-06
+          tr
+            td
+              a href="#" -这是去年的新闻
+            td align="right" 2007-10-17
+          tr
+            td
+              a href="#" -妈呀，还没完没了了
+            td align="right" 2007-10-17
+          tr
+            td
+              a href="#" -硬编码真不爽
+            td align="right" 2007-09-10
+          tr
+            td
+              a href="#" -超无聊啊
+            td align="right" 2012-12-21
+          tr
+            td 
+              a href="#" -听说世界末日快到了
+            td align="right" 2011-13-12
+          tr
+            td
+              a href="#" -哇噻，￥%……&&%￥…………&&%……&&
+            td align="right" 2011-11-11
+          tr
+            td
+              a href="#" -我想水微博了，怎么办？
+            td align="right" 2007-09-10
+          tr
+            td
+              a href="#" -娃哈哈，我还没上微博呢
+            td align="right" 2012-12-21
+          tr
+            td 
+              a href="#" -人人也好久没上了呢
+            td align="right" 2011-13-12
+          tr
+            td
+              a href="#" -那我是要上微博呢？
+            td align="right" 2011-11-11
+          tr
+            td 
+              a href="#" -还是微博呢？
+            td align="right" 2011-13-12
+          tr
+            td
+              a href="#" -还是微博呢
+            td align="right" 2011-11-11
+        div.pagination align="center"
+          ul
+            li.disable
+              span <<
+            li.active
+              span 1
+            li
+              a href="#" 2
+            li
+              a href="#" 3
+            li
+              a href="#" >>
+
