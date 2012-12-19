@@ -1,0 +1,62 @@
+div.container
+  ul.breadcrumb
+    li
+      a href=root_path 首页
+      span.divider \
+    li.active 信息公开目录
+
+  div.row
+    div.span3
+      ul.nav.nav-tabs.nav-stacked
+        li
+          a href="#" 部门文件
+        li
+          a href="#" 行政执法
+        li 
+          a href="#" 办事指南
+        li
+          a href="#" 财政预决算
+        li
+          a href="#" 规划计划
+        li
+          a href="#" 统计信息
+    div.span9
+      ul.nav.nav-tabs
+        li.active
+          a href="#" 
+            strong 行政执法
+      div
+        table.table.table-striped width="100%" style="text-align:center;"
+          tr
+            td width="20%" 
+              strong 索引号
+            td width="35%" 
+              strong 名称
+            td width="15%" 
+              strong 文号
+            td width="15%" 
+              strong 发文机关
+            td width="15%" 
+              strong 发文日期
+          -num=201212120001
+          -10.times do
+            tr
+              td 0412-00-2012-009408
+              td 
+                a href="#" XXX副局长包养情妇被抓
+              td =num
+              td 广东省人民检察院
+              td 2012-12-12
+              -num+=1
+        div.pagination align="right"
+          ul
+            li.disable
+              span <<
+            li.active
+              span 1
+            li
+              a href="#" 2
+            li
+              a href="#" 3
+            li
+              a href="#" >>
