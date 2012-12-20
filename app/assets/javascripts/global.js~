@@ -1,4 +1,4 @@
-window.onload = init_nav;
+//window.onload = init_nav;
 
 function get_controller_name(){
   path = location.href;  //获取当前页面的路径，全路径
