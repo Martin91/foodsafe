@@ -3,48 +3,35 @@ div.container
     li
       a href=root_path 首页
       span.divider \
-    li.active 法律法规 
+    li.active 政务信息
 
   div.row
     div.span3
       ul.nav.nav-tabs.nav-stacked
         li
-          a href="#" 相关法律
+          a href="#" 工作计划
         li
-          a href="#" 相关法规
+          a href="#" 工作内容
         li
-          a href="#" 部门规定
+          a href="#" 工作成果
         li 
-          a href="#" 工作文件
+          a href="#" 工作动态
+        li
+          a href="#" 各省动态
 
     div.span9
       ul.nav.nav-tabs
         li.active
           a href="#" 
-            strong 相关法律
-      div.row#search_form
-        form.navbar-form.pull-right
-          |
-            关键字
-          input.span2 type="text"
-          |
-            时间
-          input.span2 type="text"
-          input.btn type="submit" value="搜索"
-      br
+            strong 工作动态
       div#file_list
         table cell-padding="0" cell-spacing="0" width="80%"
           -id=0
           -15.times do
-            -id+=1
+            -id += 1
             tr
               td 
-                a href=request.fullpath+"/#{id}" target="_blank"
-                  |
-                    -第
-                  =id
-                  |
-                    套中华人民共和国食品安全法
+                a href=request.fullpath+"/#{id}" target="_blank" -这是最新的新闻动态#{id}
               td align="right" 2011-04-27
         div.pagination align="center"
           ul

@@ -8,12 +8,12 @@ FoodSafeNet::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   match 'organ' => 'organ#show' 
-  match 'laws' => 'laws#index'
-  match 'gov_infos' => 'gov_info#index'
-  match 'public_infos' => 'public_infos#index'
+  resources :laws
+  resources :gov_infos
+  resources :public_infos
   match 'reports' => 'reports#index'
   match 'servers' => 'servers#index'
-  match 'integritys' => 'integritys#index'
+  resources :integritys
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

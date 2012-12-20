@@ -22,10 +22,12 @@ div.container
             strong 工作动态
       div#file_list
         table cell-padding="0" cell-spacing="0" width="80%"
+          -id=0
           -15.times do
+            -id+=1
             tr
               td 
-                a href="#" -这里是一个新公告
+                a href=request.fullpath+"/#{id}" target="_blank" -这里是公告#{id}
               td align="right" 2011-04-27
         div.pagination align="center"
           ul

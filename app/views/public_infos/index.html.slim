@@ -39,11 +39,13 @@ div.container
             td width="15%" 
               strong 发文日期
           -num=201212120001
+          -id=0
           -10.times do
+            -id+=1
             tr
               td 0412-00-2012-009408
               td 
-                a href="#" XXX副局长包养情妇被抓
+                a href=request.fullpath+"/#{id}" target="_blank" XXX副局长今天又XX$%$%#%#$$%#%$$
               td =num
               td 广东省人民检察院
               td 2012-12-12
