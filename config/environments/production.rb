@@ -49,7 +49,7 @@ FoodSafeNet::Application.configure do
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += ['bootstrap.css']
   config.assets.precompile += ['bootstrap.js']
-
+  config.assets.precompile += ['global.js']
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
