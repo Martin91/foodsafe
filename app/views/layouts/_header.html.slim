@@ -3,24 +3,24 @@
     =image_tag "banner.png"
   .navbar
     .navbar-inner
-      ul.nav
-        li.active
+      ul.nav#navbar_list
+        li id=root_path
           a href=root_path 首页
-        li 
+        li id=organ_path
           a href=organ_path 机构职能
-        li 
+        li id=laws_path
           a href=laws_path 政策法规
-        li
+        li id=gov_infos_path
           a href=gov_infos_path 政务信息
-        li
+        li id=public_infos_path
           a href=public_infos_path 信息公开
-        li
+        li id=reports_path
           a href=reports_path 投诉举报
-        li 
+        li id=servers_path
           a href=servers_path 公众服务
-        li
+        li onclick="invalid_nav()"
           a href="#" 公众论坛
-        li
+        li id=integritys_path
           a href=integritys_path 诚信系统
-        li
+        li onclick="invalid_nav()"
           a href="#" 个性化定制
