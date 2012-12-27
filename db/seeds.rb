@@ -9,16 +9,13 @@
 
 count_range = 1...100
 
-info_type = ["部门文件", "行政执法", "办事指南", "财政预决算", "规划计划", "统计信息"]
-info_type.each do |inf_type|
+law = ["相关法律", "相关法规", "部门规定", "工作文件"]
+law.each do |law_type|
   count_range.each do |count|
-    info = PublicInfo.new
-    info.title = "这是#{inf_type}中的第#{count}个文件的标题"
-    info.content = "这是一段文本，用于说明#{inf_type}的内容"
-    info.index_number = "0412-00-2012-009#{count}"
-    info.file_number = "201212120#{count}"
-    info.organ = "XX省XX办公室"
-    info.info_type = inf_type
+    info = Law.new
+    info.title = "这是#{law_type}中的第#{count}个文件的标题"
+    info.content = "这是一段文本，用于说明#{law_type}的内容" * 50
+    info.law_type = law_type
     info.save
   end
 end
