@@ -40,13 +40,15 @@ div.container
       br
       div#reports_info
         div
-          form
+          form action="/reports/query#reporthistory" method="post"
             fieldset
               a name="reporthistory"
               legend 信访记录
               div.input-prepend
                 div.btn-group
-                  a.btn.dropdown-toggle data-toggle="dropdown" href="#" 按登记号查询<span class="caret"></span>
+                  a.btn.dropdown-toggle data-toggle="dropdown" href="#"
+                    | 按登记号查询
+                    span.caret
                   ul.dropdown-menu
                     li
                       a tabindex="-1" href="#" 按登记号查询
@@ -54,8 +56,9 @@ div.container
                       a tabindex="-1" href="#" 按提交日期查询
                     li
                       a tabindex="-1" href="#" 按提交日期查询
-                input.span3 id="prependedDropdownButton" type="text"
+                input.span3 id="prependedDropdownButton" type="text" name="query"
                 input.btn.btn-primary type="submit" value="查询"
+          = link_to "清除查询条件", reports_path(:anchor => "reporthistory")
         div
           table.table.table-striped
             tr.info
@@ -77,12 +80,4 @@ div.container
           div#pagination align="center"
             div.pagination
               = paginate @reports
-            div
-              span 共
-              strong 999
-              |
-                条记录，分xx页,转到&nbsp
-              input.span1 type="text"
-                |
-                  &nbsp页
-  hr
+

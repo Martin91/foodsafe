@@ -15,7 +15,11 @@ FoodSafeNet::Application.routes.draw do
   resources :laws
   resources :gov_infos
   resources :public_infos
-  resources :reports, :only => [:index, :create]
+  resources :reports, :only => [:index, :create, :query] do
+    collection do
+      post :query
+    end
+  end
   match 'servers' => 'servers#index'
   resources :integritys
   resources :sessions, only: [:new, :create, :destroy]

@@ -16,4 +16,11 @@ class ReportsController < ApplicationController
       redirect_to reports_path
     end
   end
+
+  def query
+    @reports = Report.where(:no => params[:query]).page params[:page]
+    @report = Report.new
+
+    render 'index'
+  end
 end
