@@ -20,7 +20,7 @@ div.container
         table cell-padding="0" cell-spacing="0" width="80%"
           - @gov_infos.each do |info|
             tr
-              td = link_to info
+              td = link_to info.name, info
               td = info.created_at.to_formatted_s(:db)
         div.pagination align="center"
           ul
