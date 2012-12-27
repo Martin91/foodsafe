@@ -8,14 +8,8 @@ div.container
   div.row
     div.span3
       ul.nav.nav-tabs.nav-stacked
-        li
-          a href="#" 相关法律
-        li
-          a href="#" 相关法规
-        li
-          a href="#" 部门规定
-        li 
-          a href="#" 工作文件
+        - @law_types.each do |law_type|
+          li = link_to law_type, laws_path(:law_type => law_type) 
 
     div.span9
       ul.nav.nav-tabs
@@ -34,18 +28,11 @@ div.container
       br
       div#file_list
         table cell-padding="0" cell-spacing="0" width="80%"
-          -id=0
-          -15.times do
-            -id+=1
+          -@laws.each do |law|
             tr
-              td 
-                a href=request.fullpath+"/#{id}" target="_blank"
-                  |
-                    -第
-                  =id
-                  |
-                    套中华人民共和国食品安全法
-              td align="right" 2011-04-27
+              td = link_to law.title, law
+              td = law.created_at.to_formatted_s(:db)
+
         div.pagination align="center"
           ul
             li.disable
