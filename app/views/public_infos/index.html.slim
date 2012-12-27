@@ -30,20 +30,11 @@ div.container
               strong 发文日期
 
           - @public_infos.each do |info|
-            td = info.index_number
-            td = link_to info.title, info
-            td = info.file_number
-            td = info.organ
-            td = info.created_at.to_formatted_s(:db)
-        div.pagination align="right"
-          ul
-            li.disable
-              span <<
-            li.active
-              span 1
-            li
-              a href="#" 2
-            li
-              a href="#" 3
-            li
-              a href="#" >>
+            tr
+              td = info.index_number
+              td = link_to info.title, info
+              td = info.file_number
+              td = info.organ
+              td = info.created_at.to_formatted_s(:db)
+        div.pagination
+          = paginate @public_infos
