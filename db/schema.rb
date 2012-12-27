@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121227063836) do
+ActiveRecord::Schema.define(:version => 20121227072118) do
 
   create_table "gov_infos", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(:version => 20121227063836) do
     t.string   "law_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "public_infos", :force => true do |t|
+    t.string   "index_number"
+    t.string   "title"
+    t.text     "content"
+    t.string   "file_number"
+    t.string   "organ"
+    t.string   "info_type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
