@@ -16,82 +16,68 @@ div.container
     div.span9
       ul.nav.nav-tabs
         li.active
-          a href="#" 
+          a href="#"
             strong 申请信访
 
       div#report_form
-        form
+        = form_for @report do |f|
           fieldset
             a name="newreport"
             legend 信访人信息
-            label 姓名:
-            input type="text" placeholder="请输入您的姓名"
-            label 电子邮箱:
-            input#prependedInput type="text" placeholder="请输入您的电子邮箱"
-            label 联系电话:
-            input type="text" placeholder="请输入您的联系电话"
-
-            legend 信件内容
-            label 标题:
-            input type="text"
-            label 内容:
-            textarea.span6 rows="6" 
+            = f.label :user_name, '姓名'
+            = f.text_field :user_name, :placeholder => "请输入您的姓名"
+            = f.label :user_email, '电子邮箱'
+            = f.text_field :user_email, :placeholder => "请输入您的邮箱"
+            = f.label :user_phone, '联系电话'
+            = f.text_field :user_phone, :placeholder => "请输入您的联系电话"
+            = f.label :title, '标题'
+            = f.text_field :title, :placeholder => "请输入标题"
+            = f.label :content, '内容'
+            = f.text_area :content, :placeholder => "请输入内容", :size => "60x10"
             br
-            input.btn type="submit" value="提交"
-              |
-                &nbsp
+            = f.submit '提交', :class => 'btn'
             input.btn type="reset"  value="重填"
       br
       div#reports_info
         div
-          form
+          form action="/reports/query#reporthistory" method="post"
             fieldset
               a name="reporthistory"
               legend 信访记录
               div.input-prepend
                 div.btn-group
-                  a.btn.dropdown-toggle data-toggle="dropdown" href="#" 按登记号查询<span class="caret"></span>
+                  a.btn.dropdown-toggle data-toggle="dropdown" href="#"
+                    | 按登记号查询
+                    span.caret
                   ul.dropdown-menu
                     li
                       a tabindex="-1" href="#" 按登记号查询
                     li
                       a tabindex="-1" href="#" 按提交日期查询
-                    li 
+                    li
                       a tabindex="-1" href="#" 按提交日期查询
-                input.span3 id="prependedDropdownButton" type="text"
+                input.span3 id="prependedDropdownButton" type="text" name="query"
                 input.btn.btn-primary type="submit" value="查询"
+          = link_to "清除查询条件", reports_path(:anchor => "reporthistory")
         div
           table.table.table-striped
             tr.info
-              td width="30%"
-                strong 登记号
-              td width="30%"
-                strong 提交日期
-              td width="20%"
-                strong 状态
-              td width="20%"
-                strong 查看
-            -5.times do
+                td width="30%"
+                  strong 登记号
+                td width="30%"
+                  strong 提交日期
+                td width="20%"
+                  strong 状态
+                td width="20%"
+                  strong 查看
+            - @reports.each do |report|
               tr
-                td 201212190048
-                td 2012-12-19
-                td 未受理
+                td = report.no
+                td = report.created_at
+                td = report.status
                 td
                   a href="#" 查看
           div#pagination align="center"
-            div.pagination 
-              ul
-                -page_number=0
-                -5.times do
-                  -page_number += 1
-                  li
-                    a href="#" =page_number
-            div
-              span 共
-              strong 999
-              |
-                条记录，分xx页,转到&nbsp
-              input.span1 type="text"
-                |
-                  &nbsp页
-  hr
+            div.pagination
+              = paginate @reports
+
