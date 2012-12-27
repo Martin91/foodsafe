@@ -157,6 +157,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  kaminari
   pg (= 0.12.2)
   rails (= 3.2.8)
   rails_admin
