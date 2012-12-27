@@ -1,3 +1,5 @@
-div.container
- div#content
-  =render "layouts/body"
+.container
+  #content
+    .title = @integrity.title
+    .date  = @integrity.created_at
+    .content = @integrity.content

@@ -8,12 +8,8 @@ div.container
   div.row
     div.span3
       ul.nav.nav-tabs.nav-stacked
-        li
-          a href="#" 质量公告
-        li
-          a href="#" 查处公告
-        li
-          a href="#" 审批公告
+        - @info_types.each do |info_type|
+          li = link_to info_type, integritys_path(:info_type => info_type)
 
     div.span9
       ul.nav.nav-tabs
@@ -22,13 +18,10 @@ div.container
             strong 工作动态
       div#file_list
         table cell-padding="0" cell-spacing="0" width="80%"
-          -id=0
-          -15.times do
-            -id+=1
+          - @integritys.each do |info|
             tr
-              td 
-                a href=request.fullpath+"/#{id}" target="_blank" -这里是公告#{id}
-              td align="right" 2011-04-27
+              td = link_to info.title, info
+              td = info.created_at.to_formatted_s(:db)
         div.pagination align="center"
           ul
             li.disable
