@@ -2,7 +2,7 @@
 class ReportsController < ApplicationController
   def index
     @report = Report.new
-    @reports = Report.all
+    @reports = Report.order(:created_at).page params[:page]
   end
 
   def create

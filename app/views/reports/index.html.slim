@@ -76,12 +76,7 @@ div.container
                   a href="#" 查看
           div#pagination align="center"
             div.pagination
-              ul
-                -page_number=0
-                -5.times do
-                  -page_number += 1
-                  li
-                    a href="#" =page_number
+              = paginate @reports
             div
               span 共
               strong 999
