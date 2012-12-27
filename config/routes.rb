@@ -14,6 +14,10 @@ FoodSafeNet::Application.routes.draw do
   match 'reports' => 'reports#index'
   match 'servers' => 'servers#index'
   resources :integritys
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signin' => 'sessions#new'
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
