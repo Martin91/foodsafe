@@ -11,11 +11,11 @@ FoodSafeNet::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
-  match 'organ' => 'organ#show' 
+  match 'organ' => 'organ#show'
   resources :laws
   resources :gov_infos
   resources :public_infos
-  match 'reports' => 'reports#index'
+  resources :reports, :only => [:index, :create]
   match 'servers' => 'servers#index'
   resources :integritys
   resources :sessions, only: [:new, :create, :destroy]
