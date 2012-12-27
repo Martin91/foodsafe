@@ -8,31 +8,20 @@ div.container
   div.row
     div.span3
       ul.nav.nav-tabs.nav-stacked
-        li
-          a href="#" 工作计划
-        li
-          a href="#" 工作内容
-        li
-          a href="#" 工作成果
-        li 
-          a href="#" 工作动态
-        li
-          a href="#" 各省动态
+        - @info_types.each do |info_type|
+          li = link_to info_type, gov_infos_path(:info_type => info_type)
 
     div.span9
       ul.nav.nav-tabs
         li.active
-          a href="#" 
+          a href="#"
             strong 工作动态
       div#file_list
         table cell-padding="0" cell-spacing="0" width="80%"
-          -id=0
-          -15.times do
-            -id += 1
+          - @gov_infos.each do |info|
             tr
-              td 
-                a href=request.fullpath+"/#{id}" target="_blank" -这是最新的新闻动态#{id}
-              td align="right" 2011-04-27
+              td = link_to info
+              td = info.created_at.to_formatted_s(:db)
         div.pagination align="center"
           ul
             li.disable
