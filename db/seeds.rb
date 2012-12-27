@@ -9,28 +9,16 @@
 
 count_range = 1...100
 
-count_range.each do |count| 
-  info = GovInfo.new
-  info.name = "这是第#{count}个工作计划"
-  info.content = "这是一段文本，说明工作计划的内容！" * 50
-  info.info_type = "工作计划"
-  info.save
-
-  info = GovInfo.new
-  info.name = "#{count}这是工作内容的标题"
-  info.content = "这是一段文本，说明工作内容！" * 50
-  info.info_type = "工作内容"
-  info.save
-
-  info = GovInfo.new
-  info.name = "这是工作成果#{count}"
-  info.content = "这个部分展示工作成果！" * 50
-  info.info_type = "工作成果"
-  info.save
-
-  info = GovInfo.new
-  info.name = "#{count}这是工作动态标题"
-  info.content = "这是一段文本，说明工作动态内容" * 50
-  info.info_type = "工作动态"
-  info.save
+info_type = ["部门文件", "行政执法", "办事指南", "财政预决算", "规划计划", "统计信息"]
+info_type.each do |inf_type|
+  count_range.each do |count|
+    info = PublicInfo.new
+    info.title = "这是#{inf_type}中的第#{count}个文件的标题"
+    info.content = "这是一段文本，用于说明#{inf_type}的内容"
+    info.index_number = "0412-00-2012-009#{count}"
+    info.file_number = "201212120#{count}"
+    info.organ = "XX省XX办公室"
+    info.info_type = inf_type
+    info.save
+  end
 end
