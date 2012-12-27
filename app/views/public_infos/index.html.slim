@@ -8,18 +8,8 @@ div.container
   div.row
     div.span3
       ul.nav.nav-tabs.nav-stacked
-        li
-          a href="#" 部门文件
-        li
-          a href="#" 行政执法
-        li 
-          a href="#" 办事指南
-        li
-          a href="#" 财政预决算
-        li
-          a href="#" 规划计划
-        li
-          a href="#" 统计信息
+        - @info_types.each do |info_type|
+          li = link_to info_type, public_infos_path(:info_type => info_type)
     div.span9
       ul.nav.nav-tabs
         li.active
@@ -38,18 +28,13 @@ div.container
               strong 发文机关
             td width="15%" 
               strong 发文日期
-          -num=201212120001
-          -id=0
-          -10.times do
-            -id+=1
-            tr
-              td 0412-00-2012-009408
-              td 
-                a href=request.fullpath+"/#{id}" target="_blank" XXX副局长今天又XX$%$%#%#$$%#%$$
-              td =num
-              td 广东省人民检察院
-              td 2012-12-12
-              -num+=1
+
+          - @public_infos.each do |info|
+            td = info.index_number
+            td = link_to info.title, info
+            td = info.file_number
+            td = info.organ
+            td = info.created_at.to_formatted_s(:db)
         div.pagination align="right"
           ul
             li.disable
