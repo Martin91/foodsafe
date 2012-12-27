@@ -3,7 +3,6 @@ FoodSafeNet::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  root :to => "home_page#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -22,7 +21,7 @@ FoodSafeNet::Application.routes.draw do
   end
   match 'servers' => 'servers#index'
   resources :integritys
-  resources :sessions, only: [:new, :create, :destroy]
+  #resources :sessions
 
   match '/signin' => 'sessions#new'
 
@@ -69,6 +68,7 @@ FoodSafeNet::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => "home_page#show"
 
   # See how all your routes lay out with "rake routes"
 
