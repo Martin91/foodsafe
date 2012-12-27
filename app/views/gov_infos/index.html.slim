@@ -23,15 +23,4 @@ div.container
               td = link_to info.name, info
               td = info.created_at.to_formatted_s(:db)
         div.pagination align="center"
-          ul
-            li.disable
-              span <<
-            li.active
-              span 1
-            li
-              a href="#" 2
-            li
-              a href="#" 3
-            li
-              a href="#" >>
-
+          = paginate @gov_infos  

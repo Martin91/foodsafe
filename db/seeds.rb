@@ -10,27 +10,27 @@
 count_range = 1...100
 
 count_range.each do |count| 
-  law = Law.new
-  law.title = "#{count}这是某部法律的标题"
-  law.content = "这是一段文本，说明法律内容" * 50
-  law.law_type = "相关法律"
-  law.save
+  info = GovInfo.new
+  info.name = "这是第#{count}个工作计划"
+  info.content = "这是一段文本，说明工作计划的内容！" * 50
+  info.info_type = "工作计划"
+  info.save
 
-  law = Law.new
-  law.title = "#{count}这是某部法规的标题"
-  law.content = "这是一段文本，说明法规内容" * 50
-  law.law_type = "相关法规"
-  law.save
+  info = GovInfo.new
+  info.name = "#{count}这是工作内容的标题"
+  info.content = "这是一段文本，说明工作内容！" * 50
+  info.info_type = "工作内容"
+  info.save
 
-  law = Law.new
-  law.title = "#{count}这是某个部门规定的标题"
-  law.content = "这个部分说明部门规定内容" * 50
-  law.law_type = "部门规定"
-  law.save
+  info = GovInfo.new
+  info.name = "这是工作成果#{count}"
+  info.content = "这个部分展示工作成果！" * 50
+  info.info_type = "工作成果"
+  info.save
 
-  law = Law.new
-  law.title = "#{count}这是工作文件标题"
-  law.content = "这是一段文本，说明工作文件内容" * 50
-  law.law_type = "工作文件"
-  law.save
+  info = GovInfo.new
+  info.name = "#{count}这是工作动态标题"
+  info.content = "这是一段文本，说明工作动态内容" * 50
+  info.info_type = "工作动态"
+  info.save
 end
