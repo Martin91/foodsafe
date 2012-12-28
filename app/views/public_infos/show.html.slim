@@ -1,5 +1,5 @@
 div.container
   div#content
     .title = @public_info.title
-    .date = @public_info.created_at
+    .date = @public_info.created_at.to_formatted_s(:long)
     .content = @public_info.content

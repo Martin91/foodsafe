@@ -35,6 +35,6 @@ div.container
               td = link_to info.title, info
               td = info.file_number
               td = info.organ
-              td = info.created_at.to_formatted_s(:db)
+              td = info.created_at.to_date
         div.pagination
           = paginate @public_infos
