@@ -1,7 +1,7 @@
 .container
   #content
     .title = @gov_info.name
-    .date = @gov_info.created_at
+    .date = @gov_info.created_at.to_formatted_s(:long)
     .content = @gov_info.content
 
 

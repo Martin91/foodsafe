@@ -33,7 +33,7 @@ works.each do |work_type|
   count_range.each do |count|
     work = GovInfo.new
     work.name = "这是#{work_type}中的第#{count}个文件的标题"
-    work.content = "这是一段文本，用于说明#{work}的内容" * 50
+    work.content = "这是一段文本，用于说明#{work_type}的内容" * 50
     work.info_type = work_type
     work.save
   end
