@@ -17,10 +17,11 @@ div.container
           a href="#"
             strong 工作动态
       div#file_list
-        table cell-padding="0" cell-spacing="0" width="80%"
+        table cell-padding="0" cell-spacing="0" width="100%"
           - @gov_infos.each do |info|
             tr
               td = link_to info.name, info
-              td = info.created_at.to_date
+              td  align="right" 
+                = info.created_at.to_date
         div.pagination align="center"
           = paginate @gov_infos  

@@ -29,11 +29,13 @@ div.container
           input.btn type="submit" value="搜索"
       br
       div#file_list
-        table cell-padding="0" cell-spacing="0" width="80%"
+        table cell-padding="0" cell-spacing="0" width="100%"
           -@laws.each do |law|
             tr
-              td = link_to law.title, law
-              td = law.created_at.to_date
+              td
+                = link_to law.title, law
+              td align="right"
+                = law.created_at.to_date
 
         div.pagination align="center"
           = paginate @laws
