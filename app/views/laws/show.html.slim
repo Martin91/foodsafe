@@ -1,5 +1,5 @@
 .container
   #content
     .title = @law.title
-    .date = @law.created_at
+    .date = @law.created_at.to_formatted_s(:long)
     .content = @law.content
