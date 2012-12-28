@@ -21,6 +21,6 @@ div.container
           - @gov_infos.each do |info|
             tr
               td = link_to info.name, info
-              td = info.created_at.to_formatted_s(:db)
+              td = info.created_at.to_date
         div.pagination align="center"
           = paginate @gov_infos  

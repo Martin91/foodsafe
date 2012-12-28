@@ -17,13 +17,15 @@ div.container
           a href="#" 
             strong 相关法律
       div.row#search_form
-        form.navbar-form.pull-right
+        form.navbar-form.pull-right action="/laws/search" method="get"
           |
             关键字
-          input.span2 type="text"
+          input.span2#keyword name="keyword" type="text"
           |
-            时间
-          input.span2 type="text"
+            &nbsp&nbsp&nbsp&nbsp时间
+          input.span2#keydate name="keydate" type="text"
+          |
+            &nbsp&nbsp&nbsp&nbsp
           input.btn type="submit" value="搜索"
       br
       div#file_list
@@ -31,7 +33,7 @@ div.container
           -@laws.each do |law|
             tr
               td = link_to law.title, law
-              td = law.created_at.to_formatted_s(:db)
+              td = law.created_at.to_date
 
         div.pagination align="center"
           = paginate @laws
