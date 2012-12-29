@@ -12,8 +12,6 @@ div.container
           a href="#companys" XX省食品生产加工企业
         li
           a href="#certificate" XX省食品批准证书
-        li
-          a href="#serialnumber" XX省食品广告批准文号
 
     div.span9
       ul.nav.nav-tabs
@@ -23,52 +21,33 @@ div.container
       
       div#search_forms
         div.search_form
-          form
+          form action="/servers/search_company" method="get"
             fieldset
               a name="companys"
               legend 企业信息查询
               label 企业名称
-              input type="text"
+              input#company_name name="company_name" type="text"
               label 注册地址
-              input type="text"
+              input#register_address name="register_address" type="text"
               label 许可证号
-              input type="text"
+              input#company_license_no name="company_license_no" type="text"
               label 许可项目名称
-              input type="text"
+              input#license_project name="license_project" type="text"
               div.alert
                 |
                   *可以填写一个或者多个搜索项关键字，然后按“搜索”按钮。
               input.btn type="submit" value="搜索"
       
         div.search_form
-          form
+          form action="/servers/search_product" method="get"
             fieldset
               a name="certificate"
               legend 批准证号查询
               label 产品名称
-              input type="text"
+              input#product_name name="product_name" type="text"
               label 批准文号
-              input type="text"
+              input#product_license_no name="product_license_no" type="text"
               div.alert
                 |
                   *可以填写一个或者多个搜索项关键字，然后按“搜索”按钮。
               input.btn type="submit" value="搜索"
-      
-        div.search_form
-          form
-            fieldset
-              a name="serialnumber"
-              legend 广告文号查询
-              label 企业名称
-              input type="text"
-              label 产品名称
-              input type="text"
-              label 批准文号
-              input type="text"
-              label 广告批准文号
-              input type="text"
-              div.alert
-                |
-                  *可以填写一个或者多个搜索项关键字，然后按“搜索”按钮。
-              input.btn type="submit" value="搜索"
-          

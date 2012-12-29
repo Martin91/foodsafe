@@ -11,6 +11,8 @@ FoodSafeNet::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action 
 
   match '/laws/search' => 'laws#search'
+  match '/servers/search_company' => 'servers#search_company'
+  match '/servers/search_product' => 'servers#search_product'
   match 'organ' => 'organ#show'
   resources :laws
   resources :gov_infos
