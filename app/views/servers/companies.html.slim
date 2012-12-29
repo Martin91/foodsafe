@@ -1,0 +1,24 @@
+.container
+  .results
+    table.table.table-bordered.table-hover#result_table width="100%"
+      tr.info#table_title
+        td width="15%" 企业名称
+        td width="15%" 生产地址
+        td width="15%" 许可证号
+        td width="12%" 法人代表
+        td width="13%" 许可项目
+        td width="15%" 注册地址
+        td width="15%" 许可证有效期
+
+      - @companies.each do |company|
+        tr
+          td 
+            strong = company.name
+          td = company.produce_address
+          td = company.license_no
+          td = company.legal_person
+          td = company.license_project
+          td = company.register_address
+          td = company.valid_for
+  .paginate align="center"
+    = paginate @companies
