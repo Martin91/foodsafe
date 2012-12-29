@@ -11,3 +11,13 @@ count_range.each do |count|
   company.valid_for = "20#{count}-13-32"
   company.save
 end
+
+count_range.each do |count|
+  product = Product.new
+  product.name = "仁德堂牌妙妙减肥胶囊"
+  product.license_no = "卫食健字（2002）第02#{count}号"
+  product.company_name = "XX保健生物制药厂"
+  product.company_address = "XX省XX市XX区第#{count}减肥厂"
+  product.health_function = "减肥防猝死"
+  product.save
+end

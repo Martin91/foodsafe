@@ -8,5 +8,7 @@ class ServersController < ApplicationController
   end
 
   def search_product
+    @products = Product.page(params[:page]).per(10)
+    render 'products'
   end
 end

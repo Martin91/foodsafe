@@ -1,0 +1,20 @@
+.container
+  .results
+    table.table.table-hover#result_table width="100%"
+      tr.info#table_title style="text-align:center"
+        td width="20%" 产品名称
+        td width="20%" 批准文号
+        td width="20%" 申报单位名称
+        td width="20%" 申报单位地址
+        td width="20%" 保健功能
+
+      -@products.each do |product|
+        tr
+          td
+            strong = product.name
+          td = product.license_no
+          td = product.company_name
+          td = product.company_address
+          td = product.health_function
+  .paginate align="center"
+    = paginate @products
