@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  produce_address: MyString
+  license_no: MyString
+  legal_person: MyString
+  license_project: MyString
+  register_address: MyString
+  valid_for: MyString
+
+two:
+  name: MyString
+  produce_address: MyString
+  license_no: MyString
+  legal_person: MyString
+  license_project: MyString
+  register_address: MyString
+  valid_for: MyString
