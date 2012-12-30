@@ -17,4 +17,4 @@ div.container
           a href="#"
             strong 部门职能
       div#content
-        = @organ_duty.content
+        = sanitize @organ_duty.content

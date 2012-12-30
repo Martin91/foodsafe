@@ -2,4 +2,4 @@ div.container
   div#content
     h2.title = @public_info.title
     .date = @public_info.created_at.to_formatted_s(:long)
-    .content = @public_info.content
+    .content = sanitize @public_info.content
