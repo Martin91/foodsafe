@@ -15,7 +15,7 @@ div.container
       ul.nav.nav-tabs
         li.active
           a href="#"
-            strong 工作动态
+            strong = @title
       div#file_list
         table cell-padding="0" cell-spacing="0" width="100%"
           - @gov_infos.each do |info|

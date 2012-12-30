@@ -4,8 +4,10 @@ class LawsController < ApplicationController
     @law_types = Law.select(:law_type).uniq.map(&:law_type)
     if params[:law_type] == nil
       @laws = Law.where("law_type = '相关法律'").page params[:page]
+      @title = "相关法律"
     else
       @laws = Law.where("law_type = '" + params[:law_type]+ "'").page params[:page]
+      @title = params[:law_type]
     end
   end
 

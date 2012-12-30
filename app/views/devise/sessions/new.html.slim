@@ -1,0 +1,21 @@
+.container
+  #login_panel style="border:1px solid white;padding-left:75%; background-image:url('/assets/food.png')"
+    h2 登录
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      div
+        = f.label :email, "电子邮箱"
+        br
+        = f.email_field :email
+
+      div
+        = f.label :password, "密码"
+        br
+        = f.password_field :password
+
+      - if devise_mapping.rememberable?
+        div
+          = f.check_box :remember_me 
+          = f.label :remember_me, "在这台电脑上记住我", :style=>"position:relative; left: 15px; top: -17px"
+
+      div
+        = f.submit "登录", :class=>"btn btn-primary"

@@ -15,6 +15,6 @@ div.container
       ul.nav.nav-tabs
         li.active
           a href="#"
-            strong 部门职能
+            strong = @title
       div#content
-        = @organ_duty.content
+        = sanitize @organ_duty.content

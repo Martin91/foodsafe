@@ -2,4 +2,4 @@
   #content
     h2.title = @law.title
     .date = @law.created_at.to_formatted_s(:long)
-    .content = @law.content
+    .content = sanitize @law.content
