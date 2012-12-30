@@ -50,3 +50,7 @@ end
 gem "devise"
 
 gem 'kaminari'
+
+gem "ckeditor"
+
+gem "paperclip"

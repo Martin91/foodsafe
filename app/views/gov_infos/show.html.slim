@@ -2,6 +2,6 @@
   #content
     h2.title = @gov_info.name
     .date = @gov_info.created_at.to_formatted_s(:long)
-    .content = @gov_info.content
+    .content = sanitize @gov_info.content
 
 

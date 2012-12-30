@@ -59,8 +59,19 @@ RailsAdmin.config do |config|
   #   # You can copy this to a 'rails_admin do ... end' block inside your gov_info.rb model definition
 
   #   # Found associations:
-
-
+  #config.modle Organ do
+  #  configure :content do
+  #    ckeditor true
+  #  end
+  #end
+  Models = [Organ, Law, GovInfo, PublicInfo, Integrity]
+  Models.each do |model|
+    config.model model do
+      configure :content do
+        ckeditor true
+      end
+    end
+  end
 
   #   # Found columns:
 
