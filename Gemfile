@@ -54,3 +54,5 @@ gem 'kaminari'
 gem "ckeditor"
 
 gem "paperclip"
+
+gem "rqrcode"

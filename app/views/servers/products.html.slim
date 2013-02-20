@@ -11,7 +11,8 @@
       -@products.each do |product|
         tr
           td
-            strong = product.name
+            strong 
+			  = link_to product.name, product_path(product)
           td = product.license_no
           td = product.company_name
           td = product.company_address
