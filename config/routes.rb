@@ -19,6 +19,7 @@ FoodSafeNet::Application.routes.draw do
   resources :laws
   resources :gov_infos
   resources :public_infos
+  resources :products
   resources :reports, :only => [:index, :create, :query] do
     collection do
       post :query
