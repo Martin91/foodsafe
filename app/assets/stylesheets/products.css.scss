@@ -1,6 +1,11 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#qr
+{
+  text-align: center;
+}
+
 table.qr_code {
   margin: auto;
   border-width: 0;
