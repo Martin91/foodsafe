@@ -9,6 +9,6 @@ class Post < ActiveRecord::Base
   validate :user_id, :presence => true
 
   def user
-    User.find(self.user_id).email ||= "Unknown"
+    User.find self.user_id 
   end
 end

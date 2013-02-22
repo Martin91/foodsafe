@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :comments, :as => :commentable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :name, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  validate :email, :presence => true, :uniqueness => true
+  validate :password, :presence => true
+  validate :name, :presence => true
 end

@@ -3,6 +3,7 @@ count_range = 1...51
 
 if User.count == 0
   user = User.new
+  user.name = "Admin"
   user.email = "admin@example.com"
   user.password = "123456"
   user.password_confirmation = "123456"
@@ -123,7 +124,7 @@ if Product.count == 0
 end
 
 if Post.count == 0
-  10.times do
+  20.times do
     post = Post.new
     post.title = "这是帖子的标题"
     post.content = "这是帖子的内容"

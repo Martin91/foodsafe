@@ -1,8 +1,8 @@
 div.container
-	table.table.table-bordered
-		tr
+	table.table.table-bordered.table-hover
+		tr.info
 			td 标题
-			td 发帖用户邮箱
+			td 发帖用户
 			td 发帖时间
 			td 回帖数
 
@@ -11,8 +11,11 @@ div.container
 				td
 					= link_to post.title, post_path(post)
 				td
-					= post.user
+					= post.user.name
 				td
 					= post.created_at.to_date
 				td
 					= post.comments.count
+	
+	.pagination align="center"
+		= paginate @posts
