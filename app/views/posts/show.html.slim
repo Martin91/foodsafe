@@ -1,2 +1,38 @@
-h1 Posts#show
-p Find me in app/views/posts/show.html.slim
+.container#post
+	#post_info
+		h3#post_title = @post.title
+		|
+			本帖由用户&nbsp
+		strong = @post.user.name
+		|
+			&nbsp于&nbsp
+		strong = @post.created_at.to_date
+		|
+			&nbsp发布
+
+	#post_body
+		= @post.content
+	
+	#comments
+		- @comments.each do |comment|
+			.comments
+				strong = comment.user.name
+				|
+					&nbsp&nbsp
+				strong = comment.created_at.to_date
+				br
+				= comment.body
+				br
+	.pagination align="center"
+		= paginate @comments
+	
+	-if user_signed_in?
+		#comment
+			=form_for @comment, :url => comments_path(@comments), :method => :post do |f|
+				= f.text_area :body, :placeholder => "回复本帖", :cols => 40, :rows => 8
+				br
+				= f.submit "回复", :class => "btn btn-primary"
+	-else
+		|
+			需要回复？请
+		= link_to "登录", new_user_session_path

@@ -1,3 +1,40 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#post
+{
+  padding: 15px;
+}
+
+#post_info
+{
+  color: #5A5858;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+#post_title
+{
+  text-decoration: underline;
+}
+
+#post_body
+{
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  background-color: #FFFAF0;
+  padding: 5px;
+}
+
+.comments
+{
+  margin-top: 10px;
+}
+
+#comment
+{
+  textarea
+  {
+    width: 500px;
+  }
+}

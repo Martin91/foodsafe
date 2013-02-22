@@ -132,3 +132,13 @@ if Post.count == 0
     post.save
   end
 end
+
+if Comment.count == 0
+  20.times do
+    comment = Comment.new
+    comment.body = "这是评论的内容" * 10
+    comment.user_id = User.first.id
+    comment.post_id = Post.first.id
+    comment.save
+  end
+end

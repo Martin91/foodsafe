@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find params[:id]
+    @comments = @post.comments.page params[:page]
+    @comment = Comment.new
+    @comment.post_id = @post.id
   end
 
   def edit

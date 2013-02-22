@@ -16,6 +16,7 @@ FoodSafeNet::Application.routes.draw do
   match '/servers/search_company' => 'servers#search_company'
   match '/servers/search_product' => 'servers#search_product'
   match 'organ' => 'organ#show'
+  resources :comments, :only => [:create]
   resources :laws
   resources :gov_infos
   resources :public_infos
