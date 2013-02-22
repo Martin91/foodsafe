@@ -13,7 +13,3 @@ function init_nav(){
   active_nav = document.getElementById("/" + current_controller_name);
   active_nav.setAttribute("class", "active");
 }
-
-function invalid_nav(){
-  alert("本系统尚在开发中\n欢迎您继续浏览本站其他精彩内容！");
-}

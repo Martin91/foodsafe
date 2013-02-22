@@ -1,0 +1,18 @@
+div.container
+	table.table.table-bordered
+		tr
+			td 标题
+			td 发帖用户邮箱
+			td 发帖时间
+			td 回帖数
+
+		- @posts.each do |post|
+			tr
+				td
+					= link_to post.title, post_path(post)
+				td
+					= post.user
+				td
+					= post.created_at.to_date
+				td
+					= post.comments.count
