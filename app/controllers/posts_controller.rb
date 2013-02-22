@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @comments = @post.comments.page params[:page]
+    @comments = @post.comments.order("created_at DESC").page params[:page]
     @comment = Comment.new
     @comment.post_id = @post.id
   end

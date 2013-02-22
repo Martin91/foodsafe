@@ -6,7 +6,7 @@
 		strong = @post.user.name
 		|
 			&nbsp于&nbsp
-		strong = @post.created_at.to_date
+		strong = @post.created_at.to_formatted_s(:db)
 		|
 			&nbsp发布
 
@@ -19,7 +19,7 @@
 				strong = comment.user.name
 				|
 					&nbsp&nbsp
-				strong = comment.created_at.to_date
+				strong = comment.created_at.to_formatted_s(:db)
 				br
 				= comment.body
 				br
@@ -29,6 +29,7 @@
 	-if user_signed_in?
 		#comment
 			=form_for @comment, :url => comments_path(@comments), :method => :post do |f|
+				= hidden_field_tag :post_id, @post.id
 				= f.text_area :body, :placeholder => "回复本帖", :cols => 40, :rows => 8
 				br
 				= f.submit "回复", :class => "btn btn-primary"
