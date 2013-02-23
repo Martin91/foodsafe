@@ -16,6 +16,5 @@
 /config/database.yml
 *.swp
 *~
-/public
 
 routes.txt
