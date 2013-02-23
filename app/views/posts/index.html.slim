@@ -1,4 +1,12 @@
 div.container
+	- if user_signed_in?
+		a#new_post_link href=new_post_path
+			button.btn.btn-primary#new_post_btn 发布新帖 
+	- else
+		|
+			需要登录?请
+		= link_to "登录", new_user_session_path
+
 	table.table.table-bordered.table-hover
 		tr.info
 			td 标题
@@ -13,7 +21,7 @@ div.container
 				td
 					= post.user.name
 				td
-					= post.created_at.to_date
+					= post.created_at.to_s(:db)
 				td
 					= post.comments.count
 	

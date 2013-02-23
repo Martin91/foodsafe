@@ -1,2 +1,12 @@
-h1 Posts#new
-p Find me in app/views/posts/new.html.slim
+.container
+	h1 发布新帖
+
+	div#post_edit_panel
+		= form_for @post do |f|
+			= f.label :title, "标题", :class => "post_edit_form_title"
+			= f.text_field :title
+			
+			= f.label :content, "内容", :class => "post_edit_form_title"
+			= f.cktext_area :content, :ckeditor => { :toolbar => "Basic" }
+
+			= f.submit "发布", :class => "btn btn-primary", :id => "create_post_btn"
