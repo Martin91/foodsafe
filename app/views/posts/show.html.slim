@@ -11,7 +11,7 @@
 			&nbsp发布
 
 	#post_body
-		= @post.content
+		= sanitize @post.content
 	
 	#comments
 		- @comments.each do |comment|
@@ -21,7 +21,7 @@
 					&nbsp&nbsp
 				strong = comment.created_at.to_formatted_s(:db)
 				br
-				= comment.body
+				= sanitize comment.body
 				br
 	.pagination align="center"
 		= paginate @comments
