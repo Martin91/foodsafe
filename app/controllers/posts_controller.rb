@@ -14,7 +14,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if user_signed_in?
+      @post = Post.new
+    else
+      session["user_return_to"] = new_post_path
+      redirect_to new_user_session_path
+    end
   end
 
   def create
